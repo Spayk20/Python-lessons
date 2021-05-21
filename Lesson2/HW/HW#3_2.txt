@@ -1,0 +1,7 @@
+import sys
+numbers = sys.argv[1]
+f = open(numbers.txt, 'r') 
+for line in f: # для каждой строки в файле
+	print(line)
+f.close()
+

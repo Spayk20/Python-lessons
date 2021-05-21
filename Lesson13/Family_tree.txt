@@ -1,0 +1,8 @@
+create table fathers (id serial, f_id integer, name text);
+
+
+insert into fathers(f_id, name) values  
+(2, 'Александр'),
+(3, 'Валерий'),
+(4, 'Петр'), 
+(5, 'Николай'); 

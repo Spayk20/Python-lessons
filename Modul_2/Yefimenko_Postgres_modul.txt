@@ -1,0 +1,44 @@
+ID GENDER    NAME     EMAIL
+1 | m      | Vasya  | mmm@mail.com
+2 | m      | Alex   | mmm@gmail.com
+3 | m      | Alexey | alexey@gmail.com
+4 | f      | Helen  | hell@gmail.com
+5 | f      | Jenny  | eachup@gmail.com
+6 | f      | Lora   | tpicks@gmail.com
+
+
+Задание №1
+
+select * from users;
+
+
+Задание №2
+
+select concat ('We have ', count(gender), ' boys!') as message from users where gender like 'm'
+union
+select concat ('We have ', count(gender), ' girls!') as message from users where gender like 'f';
+
+
+Второй способ:
+
+select
+case when gender like 'm' then concat ('We have ', count(*), ' boys!')
+when gender = 'f' then concat ('We have ', count(*), ' girls!')
+end
+from users group by gender;
+
+
+Задание №3
+
+select concat ('This is ', name, ' he has ', email) as info from users where gender like 'm'
+union
+select concat ('This is ', name, ' she has ', email) as info from users where gender like 'f';
+
+
+Второй способ:
+
+select
+case when gender = 'm' then concat ('This is ', name,',  he has email ', email)
+when gender = 'f' then concat ('This is ', name, ', she has email ', email)
+end
+from users;

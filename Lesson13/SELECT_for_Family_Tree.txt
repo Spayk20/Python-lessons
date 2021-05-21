@@ -1,0 +1,1 @@
+select concat ('This is ', a.name, ', son of ', b.name, ', grandson of ', c.name, ', superson of ', d.name) as Александр from fathers a inner join fathers b on (a.f_id = b.id) inner join fathers c on (b.f_id = c.id) inner join fathers d on (c.f_id = d.id);
